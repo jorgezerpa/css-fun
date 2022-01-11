@@ -1,0 +1,42 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+}
+section{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.s2{	
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url('image.jpg');
+	background-position: center;
+	background-size: cover;
+}
+.s1{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 30%;
+	height: 50%;
+	background: url('image.jpg');
+	background-position: center;
+	background-size: 333.333333%; /*this is equivalent to 100% of container (30*33.33=100%) for make concide both images*/
+	z-index: 1;
+	overflow: hidden;
+}
+.s1:hover ~ .s2{
+	filter: blur(5px)
+}
+.s1:hover{
+	box-shadow: 0 0 40px 10px #fff;
+}

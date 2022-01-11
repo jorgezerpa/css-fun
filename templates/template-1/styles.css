@@ -1,0 +1,252 @@
+@font-face{
+	font-family: Oswald;
+	src: url(assets/Oswald/static/Oswald-Bold.ttf);
+}
+@font-face{
+	font-family: Manrope;
+	src: "assets/Manrope/static/Manrope-Regular.ttf";
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*-------------------------------------------------
+GENERAL
+-------------------------------------------------*/
+body{
+	width: 100vw;
+	max-width: 1500px;
+	min-height: 100vh;
+	background: #070707;
+	color: #FFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+nav, main{
+	position: relative;
+	width: 90%;
+	max-width: 1200px;
+}
+section{
+	outline: 1px solid white;
+}
+h2{
+	font-family: Oswald;
+	font-size: 6rem;
+	background-image: linear-gradient(#E5E5E5, #D0D0D0);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+}
+h2 span{
+	font-size: 4rem;
+	background-image: linear-gradient(#90E100, #7DD500);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+}
+h3{
+	font-size: 2rem;
+	background-image: linear-gradient(#E5E5E5, #D0D0D0);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+}
+p{
+	font-family: Manrope;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+}
+button, input[type="submit"]{
+	font-family: Oswald;
+	border: none;
+	font-size: 1.4rem;
+}
+button:hover, input[type="submit"]:hover{
+	 	box-shadow: 0 0 1px 1px #fff;
+}
+
+li{
+	font-family: Oswald;
+	border: none;
+}
+
+/*-------------------------------------------------
+NAV
+-------------------------------------------------*/
+nav{
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	outline: .5px solid #ccc;
+	height: 4rem;
+	padding-left:1rem; 
+	padding-right:1rem; 
+	letter-spacing: 1px;
+}
+nav h1{
+	color: #fff;
+	font-size: 2rem;
+}
+nav h1:hover{
+	transform: scale(1.2);
+}
+nav ul{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-basis: 40%;
+}
+nav li{
+	list-style: none;
+	transition: .5s;
+}
+nav li:hover{
+	background: rgba(255,255,255,.5);
+	padding: 1rem;
+}
+nav a{
+	text-decoration: none;
+	color: white;
+}
+nav button{
+	color: #000;
+	width: 7rem;
+	height: 2.5rem;
+	background: linear-gradient(#95F800, #6DC500) ;
+	border-radius: 20% 20% 20% 20% / 50% 50% 50% 50%;
+	letter-spacing: 1px;
+}
+/*-------------------------------------------------
+MAIN & SECTIONS
+-------------------------------------------------*/
+main{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+}
+
+
+				/*big title*/
+.bgImage{
+	position: absolute;
+	right: 0;
+	width: 30%;
+	height: 100%;
+	background: url("assets/boxer.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: -10;
+	transform-origin: right;
+	animation: slide 2s linear;
+}
+@keyframes slide{
+	from{ transform: scaleX(0); }
+	to{ transform: scaleX(1); }
+}
+
+.subtitle{
+	position: relative;
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	text-align: center;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.subtitle h2{
+	opacity: 0;
+	animation: appear 2s linear;
+	animation-delay: 2s;
+	animation-fill-mode: forwards;
+}
+@keyframes appear{
+	from{ opacity: 0 }
+	to{ opacity: 1 }
+}
+.subtitle span{
+	display: block;
+}
+
+
+              /*suscription*/
+.suscription{
+	grid-column-start: 1;
+	grid-column-end: 3;	
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	grid-row-gap: 2rem;
+	justify-content: center;
+}
+.suscription .mail{
+	position: relative;
+	border-radius: 4% 4% 4% 4% / 50% 50% 50% 50%;
+	width: 90%;
+	background: #fff;
+	display: flex;
+}
+.suscription input[type="mail"]{
+	margin-left: 5px;
+	padding-left: 10px;
+	flex-basis: 78%;
+	border: none;
+	font-size: 1.3rem;
+}
+.suscription input[type="mail"]:focus{
+	outline: none;
+}
+.suscription input[type="submit"]{
+	flex-basis: 28%;
+	background: linear-gradient(#90E100, #7DD500);
+	border: none;
+	border-radius: 15% 15% 15% 15% / 50% 50% 50% 50%;
+}
+
+			/*journal*/
+.journal{
+	padding: 1rem;
+	padding-left: .6rem;
+	grid-column-start: 3;
+	grid-column-end: 5;
+	display: flex;
+	align-items: center;
+}
+.journal .img{
+	position: relative;
+	max-height: 200px;
+	flex-basis: 70%;
+	grid-column-gap: 1rem;
+	border-radius: 50% 50% 0 0;
+	overflow: hidden;
+}
+
+.journal .info{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin-left: 20px;
+	grid-gap: 50px;
+}
+.journal .img img{
+	width: 100%;
+}
+.journal button{
+	color: #000;
+	width: 10rem;
+	height: 2.5rem;
+	background: linear-gradient(#95F800, #6DC500);
+	border-radius: 10% 10% 10% 10% / 50% 50% 50% 50%;	
+}
+
+
+
+

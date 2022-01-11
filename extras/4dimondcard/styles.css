@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	max-width: 1400px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 600px;
+}
+.card{
+	position: relative;
+	width: 250px;
+	height: 350px;
+	border: 1px solid #000;
+	transform-style: preserve-3d;
+	/*animation: animate 5s linear infinite;*/
+}
+@keyframes animate{
+	from{ transform: rotateY(0); }
+	to{ transform: rotateY(360deg); }
+}
+.card__face{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;	
+}
+.card__face--front{
+	background: #fff;
+}
+.card__face--front .center{
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	bottom: 15%;
+	right: 15%;
+	border: 1px solid #000;
+}
+.center label{
+	content: " ";
+	position: absolute;
+	width: 20%;
+	height: 20%;
+	margin: 5px 5px;
+	background: black;
+	/*clip-path: polygon(0 50%, 50% 0, 100% 50%, 50% 100%);*/
+}
+/*.center label:nth-of-type(1){ top: 0; left: 0 };*/
+.center label:nth-of-type(3){ bottom: 0; right: 0 };
+.center label:nth-of-type(2){ top: 0; right: 0 };
+.center label:nth-of-type(4){ top: 0; right: 0 };
+
+
+
+
+
+.card__face--back{
+	transform: rotateY(180deg);
+	background: blue;
+}

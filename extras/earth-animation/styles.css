@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+}
+body{
+	width: 100vw;
+	min-height: 100vh;
+}
+.container{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, #004,#008);
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+}
+.earth{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	transform: rotate(15deg);
+	background: url('earth.jpg');
+	background-size: cover;
+	animation: animate 10s linear infinite;
+	box-shadow: 
+			0 0 20px .5px rgba(0, 100, 200, 1),
+			0 0 21px 1px rgba(51, 150, 255, .4),
+			0 0 22px 1.5px rgba(51, 150, 355, .3),
+			0 0 23px 2px rgba(51, 150, 255, .2),
+			0 0 23px .5px rgba(0, 0, 128, 1) inset;
+}
+@keyframes animate{
+	0%{ background-position: 0;}
+	100%{ background-position: 200%;} /*image proportion 2:1 so 200% return to the start point without "jump"*/
+}
+.earth.blur{
+	background: rgb(50, 150, 255);
+	filter: blur(40px);
+}
