@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transform: scale(1);
+}
+body{
+	max-width: 1600px;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(90deg, #222, #ccc) ;
+}
+.circle{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	border: 4px solid #fff;
+	border-radius: 50%;
+}
+.oscilate{
+	animation: oscilate 3s linear infinite;
+	animation-timing-function: ease-in-out;
+}
+@keyframes oscilate{
+	0%{transform: rotate(-90deg);}
+	50%{transform: rotate(90deg);}
+	100%{transform: rotate(-90deg);}
+}
+.oscilate::before{
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(#000, #fff);
+	border: 1px solid #000;
+	border-radius: 50%;
+	animation: roll 3s ease-in-out infinite;
+}
+@keyframes roll{
+	0%{transform: rotate(0deg);}
+	50%{transform: rotate(-360deg);}
+	100%{transform: rotate(0deg);}
+}
+.up-down{
+	position: relative;
+}
+.up-down span{
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	width: 5px;
+	height: 100px;
+	background: #fff;
+	animation: up-down 1.5s ease-in-out infinite;
+}
+@keyframes up-down{
+	0%{height: 240px}
+	50%{height: 100px}
+	100%{height: 240px;}
+}
+.up-down span::before{
+	content: " ";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%);
+	width: 50px;
+	height: 50px;
+	background: linear-gradient(90deg, #44f, #f44);
+	border: 1px solid #000;
+	border-radius: 50%;
+	animation:changecol 2s linear infinite;
+}
+@keyframes changecol{
+	0%{filter: hue-rotate(0);}
+	100%{filter: hue-rotate(360deg);}
+}
+
